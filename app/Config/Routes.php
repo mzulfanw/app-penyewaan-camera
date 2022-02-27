@@ -33,6 +33,39 @@ $routes->setAutoRoute(true);
 // route since we don't have to scan directories.
 $routes->get('/', 'Home::index');
 
+
+
+// Routing buat Admin
+$routes->get('/auth', 'Auth::index');
+$routes->post('/auth', 'Auth::auth');
+$routes->get('/auth/logout', 'Auth::logout');
+
+$routes->group('admin', ['namespace' => 'App\Controller\Admin'], function ($routes) {
+    $routes->get('/dashboard', 'Dashboard::index');
+
+    // Routing buat Stok
+    $routes->get('/stok', 'Stok::index');
+
+
+    $routes->get('/barang', 'Barang::index');
+    $routes->get('/barang/add', 'Barang::Add');
+    $routes->post('/barang/add', 'Barang::Store');
+
+
+    $routes->get('/kategori', 'Kategori::index');
+    $routes->get('/kategori/add', 'Kategori::add');
+    $routes->post('/kategori/add', 'Kategori::store');
+    $routes->get('/kategori/edit/(:num)', 'Kategori::edit/$1');
+    $routes->post('/kategori/update/(:num)', 'Kategori::update/$1');
+    $routes->get('/kategori/delete/(:num)', 'Kategori::delete/$1');
+
+    $routes->get('/stok', 'Stok::index');
+    $routes->get('/stok/add', 'Stok::add');
+    $routes->post('/stok/add', 'Stok::store');
+    $routes->get('/stok/edit/(:num)', 'Stok::edit/$1');
+    $routes->post('/stok/update/(:num)', 'Stok::update/$1');
+    $routes->get('/stok/delete/(:num)', 'Stok::delete/$1');
+});
 /*
  * --------------------------------------------------------------------
  * Additional Routing
