@@ -49,6 +49,9 @@
                                 <span>Data Master</span>
                             </a>
                             <ul class="submenu ">
+                                <li class="submenu-item">
+                                    <a href="<?= base_url() ?>/admin/users">Admin</a>
+                                </li>
                                 <li class="submenu-item ">
                                     <a href="<?= base_url()  ?>/admin/barang">Barang</a>
                                 </li>

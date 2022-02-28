@@ -6,11 +6,7 @@
     <h3>Admin Dashboard</h3>
 </div>
 <div class="page-content">
-    <?php foreach ($stock as $value) {
-        if (empty($value->stok)) { ?>
-            <div class="alert alert-warning text-dark"><i class="bi bi-exclamation-triangle me-3"></i> Ada Stok barang yang sudah habis <?= $value->nama_barang ?></div>
-        <?php } ?>
-    <?php } ?>
+
     <section class="row">
         <div class="col-12 col-lg-9">
             <div class="row">
