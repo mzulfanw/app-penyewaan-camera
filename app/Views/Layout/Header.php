@@ -64,7 +64,7 @@
                     <div class="col-lg-3 col-md-3 col-7">
                         <!-- Start Header Logo -->
                         <a class="navbar-brand" href="<?= base_url('/')  ?>">
-                            <p>Dadang Camp</p>
+                            <p>Camera Bandung</p>
                         </a>
                         <!-- End Header Logo -->
                     </div>
@@ -140,6 +140,7 @@
                                                 </div>
                                             <?php   } ?>
                                         </ul>
+
                                     </div>
                                     <!--/ End Shopping Item -->
                                 </div>
@@ -152,5 +153,13 @@
         <!-- End Header Middle -->
     </header>
     <!-- End Header Area -->
+
     <?= $this->renderSection('content')  ?>
+
+
+
+
+
+    <!-- Call the footer -->
+
     <?= $this->include('Layout/Footer')   ?>

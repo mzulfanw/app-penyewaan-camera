@@ -8,7 +8,7 @@
                      <div class="col-lg-12 col-md-4 col-12">
                          <div class="footer-logo">
                              <a href="index.html">
-                                 <h1 class="text-white">Cimahi Camp</h1>
+                                 <h1 class="text-white">Camera</h1>
                              </a>
                          </div>
                      </div>

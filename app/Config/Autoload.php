@@ -44,6 +44,7 @@ class Autoload extends AutoloadConfig
         APP_NAMESPACE => APPPATH, // For custom app namespace
         'Config'      => APPPATH . 'Config',
         'CodeIgniterCart' => ROOTPATH . 'ci4cart/src',
+        'Dompdf' => APPPATH . 'ThirdParty/dompdf/src',
     ];
 
     /**

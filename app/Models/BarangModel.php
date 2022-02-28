@@ -53,4 +53,51 @@ class BarangModel extends Model
 
         return $query;
     }
+
+    public function getSlugandKategori($kategori, $slug)
+    {
+        $query = $this->db->table('barang')
+            ->join('kategori', 'barang.kategori_id = kategori.id')
+            ->join('stok', 'barang.id = stok.barang_id')
+            ->where('kategori.slug ', $kategori)
+            ->where('barang.slug ', $slug)
+            ->select(['barang.nama_barang', 'barang.harga', 'stok.stok', 'barang.deskripsi', 'barang.slug as bslug', 'kategori.slug as kslug', 'barang.gambar', 'kategori.nama_kategori'])
+            ->get();
+
+        return $query;
+    }
+
+
+    public function cekStok()
+    {
+        $query = $this->db->table('barang')
+            ->join('stok', 'barang.id = stok.barang_id')
+            ->select(['stok.stok', 'barang.nama_barang'])
+            ->get();
+        return $query;
+    }
+
+    // search by kategori 
+    public function searchByKategori($kategori)
+    {
+        $query = $this->db->table('barang')
+            ->join('kategori', 'barang.kategori_id = kategori.id')
+            ->join('stok', 'barang.id = stok.barang_id')
+            ->where('kategori.nama_kategori', $kategori)
+            ->select(['barang.nama_barang', 'barang.id', 'barang.harga', 'stok.stok', 'barang.deskripsi', 'barang.slug as bslug', 'kategori.slug as kslug', 'barang.gambar', 'kategori.nama_kategori'])
+            ->get();
+
+        return $query;
+    }
+
+    // get stock by id
+    public function getStockById($id)
+    {
+        $query = $this->db->table('barang')
+            ->where('id', $id)
+            ->select(['stok'])
+            ->get();
+
+        return $query->getRow();
+    }
 }

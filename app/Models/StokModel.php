@@ -20,4 +20,27 @@ class StokModel extends Model
 
         return $query;
     }
+
+    public function getStok($id_barang)
+    {
+        $query = $this->db->table('stok')
+            ->join('barang', 'stok.barang_id = barang.id')
+            ->select(['barang.nama_barang', 'stok.stok', 'stok.id'])
+            ->where('stok.barang_id', $id_barang)
+            ->get();
+
+        return $query;
+    }
+
+
+    // update stok barang by id barang
+    public function updateStok($id_barang, $stok)
+    {
+        $query = $this->db->table('stok')
+            ->set('stok', $stok)
+            ->where('barang_id', $id_barang)
+            ->update();
+
+        return $query;
+    }
 }
